@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+
+# uv
+.uv/
+
+# OS / editor
+.DS_Store
+.ruff_cache/
+.idea/
+.vscode/
+
+# Claude Code (local settings / session data)
+.claude/

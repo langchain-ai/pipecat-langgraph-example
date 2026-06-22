@@ -1,0 +1,28 @@
+[project]
+name = "gym-support"
+version = "0.1.0"
+description = "A gym customer-support agent built with LangChain/LangGraph multi-agent handoffs (Option A: agents as graph nodes), served as both a text chat and a Pipecat voice bot, traced to LangSmith."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=1.0.0",
+    "langgraph>=1.0.0",
+    "langchain-anthropic>=1.0.0",
+    "langsmith>=0.3.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "python-dotenv>=1.0.0",
+    "pipecat-ai[openai,silero,tracing,webrtc]>=1.4.0",
+    "pipecat-ai-prebuilt>=1.0.2",
+    "opentelemetry-exporter-otlp-proto-http>=1.42.1",
+]
+
+[project.scripts]
+pipecat-langgraph-example = "gym_support.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gym_support"]
