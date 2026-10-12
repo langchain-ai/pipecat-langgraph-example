@@ -55,7 +55,7 @@ def chat(req: ChatRequest) -> ChatResponse:
     )
     reply = next(
         (
-            m.text() if hasattr(m, "text") else str(m.content)
+            m.text
             for m in reversed(result["messages"])
             if isinstance(m, AIMessage) and m.content
         ),
